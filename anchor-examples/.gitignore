@@ -1,0 +1,16 @@
+.template
+.idea
+.DS_Store
+
+test-ledger/
+node_modules/
+
+**/*/.anchor
+**/*/.DS_Store
+**/*/target
+**/*/tests/fixtures
+**/*.rs.bk
+**/*/test-ledger
+**/*/yarn.lock
+
+/target

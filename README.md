@@ -94,3 +94,55 @@ pub mod anchor_program_example {
 
 // libs.rs
 ```
+
+### Tokens
+
+- Setup Project
+
+```bash
+anchor build
+pnpm install
+```
+
+- Execute Solana Local Cluster
+
+```bash
+solana-test-validator
+```
+
+- Deploy Program
+
+```bash
+solana program deploy target/deploy/create_token.so
+```
+
+- 실행 결과
+
+gasFee 부족으로 인한 배포 실패로, test만 우선 진행 (로컬 클러스터에 붙이는 방법 학습 필요)
+
+```
+================================================================================
+Recover the intermediate account's ephemeral keypair file with
+`solana-keygen recover` and the following 12-word seed phrase:
+================================================================================
+junior rebuild escape ... absent
+================================================================================
+To resume a deploy, pass the recovered keypair as the
+[BUFFER_SIGNER] to `solana program deploy` or `solana program write-buffer'.
+Or to recover the account's lamports, pass it as the
+[BUFFER_ACCOUNT_ADDRESS] argument to `solana program close`.
+================================================================================
+Error: Account 66jUaTanz4TUXB7sfi86xJK41t7nt1G1f3nrFhLjfgrk has insufficient funds for spend (1.59287256 SOL) + fee (0.00115 SOL)
+```
+
+- 잔액 조회
+
+```bash
+solana balance 66jUaTanz4TUXB7sfi86xJK41t7nt1G1f3nrFhLjfgrk
+```
+
+- Airdrop to {Address}
+
+```bash
+solana airdrop 2 66jUaTanz4TUXB7sfi86xJK41t7nt1G1f3nrFhLjfgrk
+```
